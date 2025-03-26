@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function App() {
+export default function IdleRPG() {
   const [gold, setGold] = useState(0);
   const [heroLevel, setHeroLevel] = useState(1);
   const [heroDamage, setHeroDamage] = useState(1);
@@ -42,21 +42,19 @@ export default function App() {
   };
 
   return (
-    <main style={{ padding: '1rem', maxWidth: '600px', margin: 'auto' }}>
+    <main style={{ padding: '1rem', maxWidth: '500px', margin: '0 auto' }}>
       <h1>🛡️ Tavern of Time</h1>
-      <div style={{ padding: '1rem', border: '1px solid #ccc', marginBottom: '1rem' }}>
+      <div style={{ border: '1px solid #ccc', padding: '1rem', marginBottom: '1rem' }}>
         <p>Gold: {gold}</p>
         <p>Hero Level: {heroLevel}</p>
         <p>Hero Damage: {heroDamage}</p>
         <p>Enemy HP: {enemyHP} / {enemyMaxHP}</p>
         <p>Total Kills: {kills}</p>
       </div>
-      <button onClick={upgradeHero} style={{ width: '100%', marginBottom: '1rem' }}>
+      <button onClick={upgradeHero} style={{ width: '100%', padding: '0.5rem' }}>
         Upgrade Hero ({heroLevel * 10} gold)
       </button>
-      <p style={{ fontSize: '0.875rem', color: '#555' }}>
-        Your hero battles enemies every 3 seconds and earns gold passively.
-      </p>
+      <p>Your hero battles enemies every 3 seconds and earns gold passively.</p>
     </main>
   );
 }
